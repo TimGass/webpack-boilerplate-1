@@ -12,7 +12,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'build'),
     stats: 'errors-only',
     publicPath: path.resolve(__dirname, 'build'),
-    port: 3000,
+    port: 8000,
     hot: true,
     open: true,
   },

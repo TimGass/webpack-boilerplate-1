@@ -2,10 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/main.scss';
 
-class Welcome extends React.Component {
-  render() {
-    return <h1>Hello World from React boilerplate</h1>;
-  }
-}
+import Dummy from './js/dummyfile';
 
-ReactDOM.render(<Welcome />, document.getElementById('root'));
+ReactDOM.render(<Dummy />, document.getElementById('root'));
