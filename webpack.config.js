@@ -1,16 +1,27 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const webpack = require('webpack');
+
 module.exports = {
-  entry: './src/index.js',
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './src/index.js',
+  ],
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
+    publicPath: '/build/',
   },
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
+    contentBase: path.resolve(__dirname, 'build'),
+    stats: { colors: true },
     port: 3000,
     open: true,
+    inline: true,
+    hotOnly: true,
   },
   devtool: 'inline-source-map',
   module: {
@@ -37,5 +48,6 @@ module.exports = {
       path: path.join(__dirname, './build/'),
       hash: true,
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };
