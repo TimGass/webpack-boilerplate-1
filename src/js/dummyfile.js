@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Dummy extends Component {
   render() {
-    return <h1>Hello World React boilerplate</h1>;
+    return <h1>Hello World from React boilerplate</h1>;
   }
 }
 
