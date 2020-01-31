@@ -5,15 +5,11 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    publicPath: './',
     filename: 'bundle.js',
   },
   devServer: {
     contentBase: path.join(__dirname, 'build'),
-    stats: 'errors-only',
-    publicPath: path.resolve(__dirname, 'build'),
-    port: 8000,
-    hot: true,
+    port: 3000,
     open: true,
   },
   devtool: 'inline-source-map',
@@ -37,6 +33,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve('./index.html'),
+      filename: 'index.html',
+      path: path.join(__dirname, './build/'),
+      hash: true,
     }),
   ],
 };
