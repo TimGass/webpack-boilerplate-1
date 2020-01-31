@@ -16,7 +16,7 @@ module.exports = {
     publicPath: './',
   },
   devServer: {
-    publicPath: '/build/',
+    publicPath: '/',
     contentBase: path.resolve(__dirname, 'build'),
     stats: { colors: true },
     port: 3000,
