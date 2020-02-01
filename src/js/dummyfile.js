@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 
+import github from '../assets/github.png';
+
 class Dummy extends Component {
   render() {
-    return <h1>Hello World from React boilerplate</h1>;
+    return (
+      <div>
+        <h1>Hello World from React boilerplate</h1>
+        <img src={github} />
+      </div>
+    );
   }
 }
 
