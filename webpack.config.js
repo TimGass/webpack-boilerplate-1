@@ -8,16 +8,6 @@ module.exports = {
     filename: 'bundle.js',
     publicPath: './',
   },
-  devServer: {
-    publicPath: '/',
-    contentBase: path.resolve(__dirname, 'build'),
-    stats: { colors: true },
-    port: 3000,
-    open: true,
-    inline: true,
-    hotOnly: true,
-  },
-  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -30,11 +20,12 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|pdf)$/,
         use: {
           loader: 'url-loader',
           options: {
             limit: 25000,
+            name: '[name].[ext]',
           },
         },
       },
@@ -44,7 +35,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve('./index.html'),
       filename: 'index.html',
-      path: path.join(__dirname, './build/'),
       hash: true,
     }),
   ],
