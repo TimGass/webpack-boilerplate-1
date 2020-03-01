@@ -7,6 +7,7 @@ class Dummy extends Component {
     return (
       <div>
         <h1>Hello World from React boilerplate</h1>
+        <h1>HAHAHHAHA!!!!</h1>
         <img src={github} />
       </div>
     );
